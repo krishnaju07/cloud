@@ -19,6 +19,11 @@ const Users = () => {
         setData(userList);
     }, [userList]);
 
+    const handleSubmit = (formData) => {
+console.log(formData,"akkakaka")
+setOpen(false)
+    }
+
     const handleClose = () => {
         setOpen(false);
     };
@@ -65,7 +70,7 @@ const Users = () => {
                     </TableContainer>
                 </Paper>
             </Grid>
-            {open && <NewuserModal open={open} handleClose={handleClose} />}
+            {open && <NewuserModal open={open} formData={handleSubmit} handleClose={handleClose} />}
         </Grid>
     );
 };
